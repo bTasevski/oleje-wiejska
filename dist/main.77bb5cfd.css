@@ -339,11 +339,41 @@ template {
   display: none;
 }
 
-.page-header {
+body {
+  background-image: url("/background.f2f908d8.png");
+  background-size: 22rem;
+}
+
+.navBarContainer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: ". logo . navBar navBar navBar navBar . ";
+  font-size: 2.2rem;
+  height: 10rem;
+  margin: 0 auto;
+}
+.navBarContainer .navBar {
+  align-self: center;
+  justify-self: stretch;
+  grid-area: navBar;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navBarContainer .navBar .navBar--left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+.navBarContainer .navBar .navBar--right {
+  list-style: none;
+}
+.navBarContainer .logo {
+  grid-area: logo;
+  align-self: center;
+  justify-self: stretch;
+  font-size: 2.8rem;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
