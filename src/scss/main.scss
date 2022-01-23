@@ -1,16 +1,52 @@
 @use "normalize.scss";
 
+$yellow: #ffc900;
+$navyBlue: #1a5f7a;
+
+$regular: 300;
+$medium: 400;
+$bold: 500;
+$extraBold: 600;
+
+$regularSize: 2.2rem;
+$logoSize: 3.2rem;
+$headerSize: 7.2rem;
+$secondaryHeadersSize: 6.8rem;
+$tertiaryHeadersSize: 3.4rem;
+$listSize: 3.4rem;
+
 body {
   background-image: url("../assets/background.png");
   background-size: 22rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.gearsImageContainer {
+  width: 50vw;
+  //height: 70vh;
+  z-index: -1;
+  position: absolute;
+  top: calc(100vh / 2);
+  left: 50%;
+  //transform: translate(-50%, -50%);
+  transform: translate(-5%, -45%);
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.gridNav {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: ". logo . . navBar navBar navBar . ";
 }
 
 .navBarContainer {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: ". logo . navBar navBar navBar navBar . ";
   font-size: 2.2rem;
-
+  font-weight: $extraBold;
   height: 10rem;
   margin: 0 auto;
 
@@ -18,28 +54,75 @@ body {
     align-self: center;
     justify-self: stretch;
     grid-area: navBar;
-    display: flex;
 
-    flex-direction: row;
-    justify-content: space-between;
-
-    .navBar--left {
+    .navBar__list {
       display: flex;
-
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
       list-style: none;
-    }
-
-    .navBar--right {
-      list-style: none;
+      gap: 3rem;
+      color: $navyBlue;
+      .navBar__list--navLink {
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .navBar__list--navLinkContact {
+        cursor: pointer;
+        flex-shrink: 0;
+        color: $yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20rem;
+        height: 4.5rem;
+        background-color: white;
+        border-radius: 3rem;
+        box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
+      }
     }
   }
 
-  .logo {
+  .logoContainer {
     grid-area: logo;
     align-self: center;
     justify-self: stretch;
-    font-size: 2.8rem;
+    display: flex;
+    font-size: $logoSize;
+    color: $yellow;
+    .logoContainer__logo {
+      flex-shrink: 0;
+    }
   }
+}
+
+.gridHeader {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    ". titleHeader titleHeader titleHeader . . . ."
+    ". titleHeader titleHeader titleHeader . . . ."
+    ". titleHeader titleHeader titleHeader . . . ."
+    ". subHeader subHeader subHeader . . . .";
+}
+
+.header__title {
+  grid-area: titleHeader;
+  font-size: $headerSize;
+  color: $navyBlue;
+  align-self: end;
+  .header__title--address {
+    color: $yellow;
+  }
+}
+
+.header__subTitle {
+  grid-area: subHeader;
+  align-self: start;
+  font-size: $regularSize;
+  color: $navyBlue;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
 }

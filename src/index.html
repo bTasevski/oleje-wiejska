@@ -7,6 +7,12 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <title>Oleje Wiejska</title>
     <link rel="stylesheet" href="scss/main.scss" />
 
@@ -14,20 +20,34 @@
   </head>
 
   <body>
-    <div class="navBarContainer">
-      <div class="logo">Oleje Wiejska</div>
-      <nav class="navBar">
-        <ul class="navBar--left">
-          <li class="navBar__navLink">O Nas</li>
-          <li class="navBar__navLink">Oferta</li>
-          <li class="navBar__navLink">Dojazd</li>
-        </ul>
-        <ul class="navBar--right">
-          <li class="navBar__navLink navBar__navLink--contact">
-            Skontaktuj się!
-          </li>
-        </ul>
-      </nav>
+    <div class="homePage">
+      <div class="navBarContainer gridNav">
+        <div class="logoContainer">
+          <div class="logoContainer__logo">Oleje Wiejska</div>
+        </div>
+        <nav class="navBar">
+          <ul class="navBar__list">
+            <li class="navBar__list--navLink">O Nas</li>
+            <li class="navBar__list--navLink">Oferta</li>
+            <li class="navBar__list--navLink">Dojazd</li>
+            <li class="navBar__list--navLink">
+              <div class="navBar__list--navLinkContact">
+                <p>Skontaktuj się!</p>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <header class="header gridHeader">
+        <h1 class="header__title">
+          Hurtownia Olejów Silnikowych
+          <strong class="header__title--address">Wiejska 21a</strong>
+        </h1>
+        <h2 class="header__subTitle">Największy wybór olejów w okolicy</h2>
+      </header>
+      <div class="gearsImageContainer">
+        <img src="assets/gears.svg" alt="" />
+      </div>
     </div>
   </body>
 </html>
