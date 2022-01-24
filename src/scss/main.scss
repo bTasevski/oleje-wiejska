@@ -160,6 +160,16 @@ body {
   align-items: center;
 }
 
+.headerH2 {
+  font-size: $secondaryHeadersSize;
+  font-weight: $medium;
+  color: $yellow;
+  letter-spacing: 0.3rem;
+  span {
+    color: $navyBlue;
+  }
+}
+
 .about {
   margin-top: 13rem;
 
@@ -167,13 +177,6 @@ body {
     grid-area: about__header;
     white-space: nowrap;
     place-self: center;
-    font-size: $secondaryHeadersSize;
-    font-weight: $medium;
-    color: $yellow;
-    letter-spacing: 0.3rem;
-    span {
-      color: $navyBlue;
-    }
   }
   &__contentContainer {
     margin-top: 3rem;
@@ -233,4 +236,12 @@ body {
       }
     }
   }
+}
+
+.offer {
+  margin-top: 13rem;
+}
+
+.offer__header {
+  text-align: center;
 }

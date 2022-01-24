@@ -24,9 +24,11 @@
   "devDependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/preset-env": "^7.16.8",
+    "cssnano": "^5.0.16",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "postcss": "^8.4.5",
     "prettier": "2.5.1",
     "prettier-stylelint": "^0.4.2",
     "sass": "^1.47.0"
