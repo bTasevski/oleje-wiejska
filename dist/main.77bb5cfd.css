@@ -72,6 +72,8 @@ pre {
  */
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: inherit;
 }
 
 /**
@@ -341,6 +343,7 @@ template {
 
 .header__arrowScrollDown {
   grid-area: arrow;
+  place-self: center;
 }
 .header__arrowScrollDown span {
   display: block;
@@ -421,19 +424,33 @@ body {
 .navBarContainer .navBar__list--navLink {
   flex-shrink: 0;
   cursor: pointer;
+  display: inline-block;
+}
+.navBarContainer .navBar__list--navLink--hover::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.3rem;
+  background: #ffc900;
+  transition: width 0.3s;
+}
+.navBarContainer .navBar__list--navLink--hover:hover::after {
+  width: 100%;
 }
 .navBarContainer .navBar__list--navLinkContact {
-  cursor: pointer;
-  flex-shrink: 0;
-  color: #ffc900;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 20rem;
   height: 4.5rem;
-  background-color: white;
-  border-radius: 3rem;
+  background-color: #1a5f7a;
+  border-radius: 2rem;
   box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
+}
+.navBarContainer .navBar__list--navLinkContact:hover {
+  background-color: #ffc900;
+  color: #1a5f7a;
 }
 .navBarContainer .logoContainer {
   grid-area: logo;
@@ -472,7 +489,88 @@ body {
   font-size: 2.2rem;
   color: #1a5f7a;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.3em;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: ". . about__header . . . . .";
+}
+
+.aboutContentGrid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas: ". img img img . p p p .";
+  align-items: center;
+}
+
+.about {
+  margin-top: 13rem;
+}
+.about__header {
+  grid-area: about__header;
+  white-space: nowrap;
+  place-self: center;
+  font-size: 6.8rem;
+  font-weight: 400;
+  color: #ffc900;
+  letter-spacing: 0.3rem;
+}
+.about__header span {
+  color: #1a5f7a;
+}
+.about__contentContainer {
+  margin-top: 3rem;
+}
+.about__contentContainer__img {
+  position: relative;
+  margin-left: 5rem;
+  grid-area: img;
+  height: 30rem;
+  background: url(/hurtownia.16acc19f.png);
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.about__contentContainer__img::before, .about__contentContainer__img::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 45%;
+  height: 40%;
+  z-index: -1;
+  background: transparent;
+  transition: 0.3s;
+}
+.about__contentContainer__img::before {
+  top: -4rem;
+  left: -4rem;
+  border-top: 0.4rem solid #ffc900;
+  border-left: 0.4rem solid #ffc900;
+}
+.about__contentContainer__img::after {
+  bottom: -4rem;
+  right: -4rem;
+  border-bottom: 0.4rem solid #1a5f7a;
+  border-right: 0.4rem solid #1a5f7a;
+}
+.about__contentContainer__img:hover {
+  transform: scale(1.05);
+}
+.about__contentContainer__img:hover::after, .about__contentContainer__img:hover::before {
+  width: 35%;
+  height: 32%;
+}
+.about__contentContainer__p {
+  grid-area: p;
+  margin-right: 5rem;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 5.5rem;
+  color: #1a5f7a;
+}
+.about__contentContainer__p span {
+  color: #ffc900;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

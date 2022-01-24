@@ -3,6 +3,7 @@
 
 $yellow: #ffc900;
 $navyBlue: #1a5f7a;
+$darkNavyBlue: #124154;
 
 $regular: 300;
 $medium: 400;
@@ -46,7 +47,7 @@ body {
 }
 
 .navBarContainer {
-  font-size: 2.2rem;
+  font-size: $regularSize;
   font-weight: $extraBold;
   height: 10rem;
   margin: 0 auto;
@@ -67,19 +68,36 @@ body {
       &--navLink {
         flex-shrink: 0;
         cursor: pointer;
+        display: inline-block;
+
+        &--hover::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0.3rem;
+          background: $yellow;
+          transition: width 0.3s;
+        }
+        &--hover:hover::after {
+          width: 100%;
+        }
       }
       &--navLinkContact {
-        cursor: pointer;
-        flex-shrink: 0;
-        color: $yellow;
+        //color: $yellow;
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 20rem;
         height: 4.5rem;
-        background-color: white;
-        border-radius: 3rem;
+        //background-color: white;
+        background-color: $navyBlue;
+        border-radius: 2rem;
         box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
+        &:hover {
+          background-color: $yellow;
+          color: $navyBlue;
+        }
       }
     }
   }
@@ -127,5 +145,92 @@ body {
   font-size: $regularSize;
   color: $navyBlue;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.3em;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: ". . about__header . . . . .";
+}
+.aboutContentGrid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas: ". img img img . p p p .";
+  align-items: center;
+}
+
+.about {
+  margin-top: 13rem;
+
+  &__header {
+    grid-area: about__header;
+    white-space: nowrap;
+    place-self: center;
+    font-size: $secondaryHeadersSize;
+    font-weight: $medium;
+    color: $yellow;
+    letter-spacing: 0.3rem;
+    span {
+      color: $navyBlue;
+    }
+  }
+  &__contentContainer {
+    margin-top: 3rem;
+    &__img {
+      position: relative;
+      margin-left: 5rem;
+      grid-area: img;
+      height: 30rem;
+      background: url(../assets/hurtownia.png);
+      background-repeat: no-repeat;
+      transition: 0.3s;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 45%;
+        height: 40%;
+        z-index: -1;
+        background: transparent;
+        transition: 0.3s;
+      }
+
+      &::before {
+        top: -4rem;
+        left: -4rem;
+        border-top: 0.4rem solid $yellow;
+        border-left: 0.4rem solid $yellow;
+      }
+      &::after {
+        bottom: -4rem;
+        right: -4rem;
+        border-bottom: 0.4rem solid $navyBlue;
+        border-right: 0.4rem solid $navyBlue;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &:hover::after,
+      &:hover::before {
+        width: 35%;
+        height: 32%;
+      }
+    }
+    &__p {
+      grid-area: p;
+      margin-right: 5rem;
+      font-size: $regularSize;
+      font-weight: $regular;
+      line-height: 5.5rem;
+      color: $navyBlue;
+      span {
+        color: $yellow;
+      }
+    }
+  }
 }
