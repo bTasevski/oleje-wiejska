@@ -339,6 +339,39 @@ template {
   display: none;
 }
 
+.header__arrowScrollDown {
+  grid-area: arrow;
+}
+.header__arrowScrollDown span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #1a5f7a;
+  border-right: 5px solid #1a5f7a;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.header__arrowScrollDown span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+.header__arrowScrollDown span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
 body {
   background-image: url("/background.f2f908d8.png");
   background-size: 22rem;
@@ -376,7 +409,7 @@ body {
   justify-self: stretch;
   grid-area: navBar;
 }
-.navBarContainer .navBar .navBar__list {
+.navBarContainer .navBar__list {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -385,11 +418,11 @@ body {
   gap: 3rem;
   color: #1a5f7a;
 }
-.navBarContainer .navBar .navBar__list .navBar__list--navLink {
+.navBarContainer .navBar__list--navLink {
   flex-shrink: 0;
   cursor: pointer;
 }
-.navBarContainer .navBar .navBar__list .navBar__list--navLinkContact {
+.navBarContainer .navBar__list--navLinkContact {
   cursor: pointer;
   flex-shrink: 0;
   color: #ffc900;
@@ -407,10 +440,10 @@ body {
   align-self: center;
   justify-self: stretch;
   display: flex;
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   color: #ffc900;
 }
-.navBarContainer .logoContainer .logoContainer__logo {
+.navBarContainer .logoContainer__logo {
   flex-shrink: 0;
 }
 
@@ -418,17 +451,18 @@ body {
   margin-top: 8rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas: ". titleHeader titleHeader titleHeader . . . ." ". titleHeader titleHeader titleHeader . . . ." ". titleHeader titleHeader titleHeader . . . ." ". subHeader subHeader subHeader . . . .";
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: ". titleHeader titleHeader titleHeader . . . ." ". titleHeader titleHeader titleHeader . . . ." ". titleHeader titleHeader titleHeader . . . ." ". subHeader subHeader subHeader . . . ." ". . arrow . . . . .";
 }
 
 .header__title {
   grid-area: titleHeader;
+  line-height: 140%;
   font-size: 7.2rem;
   color: #1a5f7a;
   align-self: end;
 }
-.header__title .header__title--address {
+.header__title--address {
   color: #ffc900;
 }
 

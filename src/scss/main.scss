@@ -1,4 +1,5 @@
 @use "normalize.scss";
+@use "arrowDown.scss";
 
 $yellow: #ffc900;
 $navyBlue: #1a5f7a;
@@ -9,7 +10,7 @@ $bold: 500;
 $extraBold: 600;
 
 $regularSize: 2.2rem;
-$logoSize: 3.2rem;
+$logoSize: 3.4rem;
 $headerSize: 7.2rem;
 $secondaryHeadersSize: 6.8rem;
 $tertiaryHeadersSize: 3.4rem;
@@ -55,7 +56,7 @@ body {
     justify-self: stretch;
     grid-area: navBar;
 
-    .navBar__list {
+    &__list {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -63,11 +64,11 @@ body {
       list-style: none;
       gap: 3rem;
       color: $navyBlue;
-      .navBar__list--navLink {
+      &--navLink {
         flex-shrink: 0;
         cursor: pointer;
       }
-      .navBar__list--navLinkContact {
+      &--navLinkContact {
         cursor: pointer;
         flex-shrink: 0;
         color: $yellow;
@@ -90,7 +91,7 @@ body {
     display: flex;
     font-size: $logoSize;
     color: $yellow;
-    .logoContainer__logo {
+    &__logo {
       flex-shrink: 0;
     }
   }
@@ -100,20 +101,22 @@ body {
   margin-top: 8rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
     ". titleHeader titleHeader titleHeader . . . ."
     ". titleHeader titleHeader titleHeader . . . ."
     ". titleHeader titleHeader titleHeader . . . ."
-    ". subHeader subHeader subHeader . . . .";
+    ". subHeader subHeader subHeader . . . ."
+    ". . arrow . . . . .";
 }
 
 .header__title {
   grid-area: titleHeader;
+  line-height: 140%;
   font-size: $headerSize;
   color: $navyBlue;
   align-self: end;
-  .header__title--address {
+  &--address {
     color: $yellow;
   }
 }
