@@ -648,6 +648,7 @@ body {
 
 .contact {
   margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 .contact__header {
   display: flex;
@@ -743,6 +744,35 @@ body {
 .contact__form form button:hover {
   background-color: #ffc900;
   color: #1a5f7a;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 2fr) 1fr;
+  grid-template-areas: ". address contact .";
+  font-size: 2.2rem;
+  color: #1a5f7a;
+  margin-bottom: 3rem;
+}
+.footer__address {
+  grid-area: address;
+  justify-self: center;
+  align-self: end;
+}
+.footer__address--header {
+  color: #ffc900;
+  margin: 0.5rem 0;
+}
+.footer__address div {
+  margin-bottom: 0.5rem;
+}
+.footer__contact {
+  grid-area: contact;
+  justify-self: center;
+  align-self: end;
+}
+.footer__contact div {
+  margin-bottom: 0.5rem;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

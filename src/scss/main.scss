@@ -312,6 +312,7 @@ body {
 
 .contact {
   margin-top: 5rem;
+  margin-bottom: 5rem;
   &__header {
     display: flex;
     align-items: center;
@@ -411,6 +412,34 @@ body {
           color: $navyBlue;
         }
       }
+    }
+  }
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 2fr) 1fr;
+  grid-template-areas: ". address contact .";
+  font-size: $regularSize;
+  color: $navyBlue;
+  margin-bottom: 3rem;
+  &__address {
+    grid-area: address;
+    justify-self: center;
+    align-self: end;
+    &--header {
+      color: $yellow;
+      margin: 0.5rem 0;
+    }
+    div {
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__contact {
+    grid-area: contact;
+    justify-self: center;
+    align-self: end;
+    div {
+      margin-bottom: 0.5rem;
     }
   }
 }
