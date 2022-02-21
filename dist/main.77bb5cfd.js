@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\assets\\background.png":[["background.f2f908d8.png","assets/background.png"],"assets/background.png"],"./..\\assets\\hurtownia.png":[["hurtownia.16acc19f.png","assets/hurtownia.png"],"assets/hurtownia.png"],"_css_loader":"C:/Users/Bojan/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"C:/Users/Bojan/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\assets\\background.png":[["background.f2f908d8.png","assets/background.png"],"assets/background.png"],"./..\\assets\\hurtownia.png":[["hurtownia.16acc19f.png","assets/hurtownia.png"],"assets/hurtownia.png"],"./..\\assets\\feather.png":[["feather.7186977e.png","assets/feather.png"],"assets/feather.png"],"_css_loader":"C:/Users/Bojan/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"C:/Users/Bojan/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60496" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55797" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

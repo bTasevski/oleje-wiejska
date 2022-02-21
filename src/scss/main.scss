@@ -4,6 +4,7 @@
 $yellow: #ffc900;
 $navyBlue: #1a5f7a;
 $darkNavyBlue: #124154;
+$grey: #edeff2;
 
 $regular: 300;
 $medium: 400;
@@ -93,8 +94,10 @@ body {
         justify-content: center;
         width: 20rem;
         height: 4.5rem;
+
         //background-color: white;
         background-color: $navyBlue;
+
         border-radius: 2rem;
         box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
         &:hover {
@@ -304,5 +307,110 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.contact {
+  margin-top: 5rem;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $navyBlue;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 2fr) 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+      ". headerNumber headerForm ."
+      ". number form .";
+  }
+  &__header {
+    font-size: $tertiaryHeadersSize;
+    &--number {
+      grid-area: headerNumber;
+    }
+
+    &--form {
+      grid-area: headerForm;
+    }
+  }
+  &__number {
+    grid-area: number;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    color: $navyBlue;
+  }
+  &__form {
+    grid-area: form;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between;
+
+      input {
+        height: 3.5rem;
+        font-size: $regularSize;
+        width: 90%;
+        align-self: center;
+        border-radius: 0.8rem;
+        background-color: $grey;
+        padding-left: 1rem;
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        color: $navyBlue;
+
+        &::placeholder {
+          color: $navyBlue;
+        }
+        &:focus {
+          outline: $navyBlue solid 0.2rem;
+        }
+      }
+      textarea {
+        font-size: $regularSize;
+        height: 10rem;
+        width: 90%;
+        align-self: center;
+        border-radius: 0.8rem;
+        background-color: $grey;
+        padding-left: 1rem;
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        resize: none;
+        color: $navyBlue;
+        background-image: url("../assets/feather.png");
+        background-repeat: no-repeat;
+        background-size: 8rem;
+        background-position: right center;
+
+        &::placeholder {
+          color: $navyBlue;
+        }
+        &:focus {
+          outline: $navyBlue solid 0.2rem;
+        }
+      }
+      button {
+        width: 15rem;
+        height: 4rem;
+        font-size: $regularSize;
+        border-radius: 2rem;
+        box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
+        color: white;
+        background-color: $navyBlue;
+        align-self: center;
+        border: none;
+        font-weight: bold;
+        &:hover {
+          background-color: $yellow;
+          color: $navyBlue;
+        }
+      }
+    }
   }
 }
