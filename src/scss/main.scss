@@ -360,7 +360,7 @@ body {
         align-self: center;
         border-radius: 0.8rem;
         background-color: $grey;
-        padding-left: 1rem;
+        padding-left: 0.7rem;
         box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
         border: none;
         color: $navyBlue;
@@ -379,7 +379,7 @@ body {
         align-self: center;
         border-radius: 0.8rem;
         background-color: $grey;
-        padding-left: 1rem;
+        padding: 0.7rem;
         box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
         border: none;
         resize: none;
@@ -441,5 +441,16 @@ body {
     div {
       margin-bottom: 0.5rem;
     }
+  }
+}
+
+.flex-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  &--button {
+    justify-content: center;
   }
 }
