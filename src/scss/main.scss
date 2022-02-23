@@ -22,16 +22,19 @@ body {
   background-image: url("../assets/background.png");
   background-size: 22rem;
   font-family: "Poppins", sans-serif;
+  max-width: 190rem;
+  margin: auto;
 }
 
 .gearsImageContainer {
-  width: 50vw;
-  //height: 70vh;
+  max-width: 90rem;
+  min-width: 30rem;
+
   z-index: -1;
   position: absolute;
   top: calc(100vh / 2);
   left: 50%;
-  //transform: translate(-50%, -50%);
+
   transform: translate(-5%, -45%);
   overflow: hidden;
 
@@ -63,7 +66,7 @@ body {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: 3rem;
+      gap: clamp(1rem, 1rem + 10wv, 4rem);
       color: $navyBlue;
       &--navLink {
         flex-shrink: 0;
@@ -87,17 +90,13 @@ body {
         }
       }
       &--navLinkContact {
-        //color: $yellow;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 20rem;
         height: 4.5rem;
-
-        //background-color: white;
         background-color: $navyBlue;
-
         border-radius: 2rem;
         box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
         &:hover {
@@ -122,7 +121,7 @@ body {
 }
 
 .gridHeader {
-  margin-top: 8rem;
+  margin-top: clamp(0rem, 2vw, 8rem);
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -137,9 +136,9 @@ body {
 .header__title {
   grid-area: titleHeader;
   line-height: 140%;
-  font-size: $headerSize;
+  font-size: clamp(2.5rem, 1rem + 8vw, 8rem);
   color: $navyBlue;
-  align-self: end;
+  align-self: center;
   &--address {
     color: $yellow;
   }
@@ -148,7 +147,7 @@ body {
 .header__subTitle {
   grid-area: subHeader;
   align-self: start;
-  font-size: $regularSize;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.3rem);
   color: $navyBlue;
   text-transform: uppercase;
   letter-spacing: 0.3em;

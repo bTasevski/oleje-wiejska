@@ -384,10 +384,13 @@ body {
   background-image: url("/background.f2f908d8.png");
   background-size: 22rem;
   font-family: "Poppins", sans-serif;
+  max-width: 190rem;
+  margin: auto;
 }
 
 .gearsImageContainer {
-  width: 50vw;
+  max-width: 90rem;
+  min-width: 30rem;
   z-index: -1;
   position: absolute;
   top: 50vh;
@@ -422,7 +425,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: clamp(1rem, 1rem + 10wv, 4rem);
   color: #1a5f7a;
 }
 .navBarContainer .navBar__list--navLink {
@@ -472,7 +475,7 @@ body {
 }
 
 .gridHeader {
-  margin-top: 8rem;
+  margin-top: clamp(0rem, 2vw, 8rem);
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -482,9 +485,9 @@ body {
 .header__title {
   grid-area: titleHeader;
   line-height: 140%;
-  font-size: 7.2rem;
+  font-size: clamp(2.5rem, 1rem + 8vw, 8rem);
   color: #1a5f7a;
-  align-self: end;
+  align-self: center;
 }
 .header__title--address {
   color: #ffc900;
@@ -493,7 +496,7 @@ body {
 .header__subTitle {
   grid-area: subHeader;
   align-self: start;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.3rem);
   color: #1a5f7a;
   text-transform: uppercase;
   letter-spacing: 0.3em;
