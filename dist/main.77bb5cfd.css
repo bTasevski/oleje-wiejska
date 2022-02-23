@@ -425,7 +425,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(1rem, 1rem + 10wv, 4rem);
   color: #1a5f7a;
 }
 .navBarContainer .navBar__list--navLink {
@@ -583,7 +582,7 @@ body {
   margin-right: 5rem;
   font-size: 2.2rem;
   font-weight: 300;
-  line-height: 5.5rem;
+  line-height: 250%;
   color: #1a5f7a;
 }
 .about__contentContainer__p span {
@@ -619,19 +618,19 @@ body {
   align-items: center;
   margin-top: 6rem;
 }
-.offer__contentContainer--offerList .offerElement__checkIcon {
-  position: relative;
-}
-.offer__contentContainer--offerList .offerElement__checkIcon img {
-  position: absolute;
-  transform: translate(0, -50%);
-}
-.offer__contentContainer--offerList .offerElement span {
-  margin-left: 10rem;
-}
 .offer__contentContainer--brands img {
   width: 100%;
   height: 100%;
+}
+
+.material-icons.md-56 {
+  font-size: 56px;
+}
+
+.yellowIcon {
+  color: #ffc900;
+  font-size: 48px;
+  margin-right: 1rem;
 }
 
 .map {
@@ -694,7 +693,7 @@ body {
 .contact__form form input {
   height: 3.5rem;
   font-size: 2.2rem;
-  width: 90%;
+  width: 80%;
   align-self: center;
   border-radius: 0.8rem;
   background-color: #edeff2;
